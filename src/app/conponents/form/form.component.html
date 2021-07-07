@@ -1,0 +1,47 @@
+<div class="container-fluid">
+  <div class="container">
+    <div class="row divBig">
+      <div class="col-lg-6 col-sm-12 divSmall-1">
+        <div class="col-lg-6 col-sm-12 divSmall-1-1">
+          <h4>Dữ liệu mẫu 1:</h4>
+          <label *ngFor="let chieu of dulieu1">{{ chieu.chieu1 }}</label>
+          <label *ngFor="let chieu of dulieu1">{{ chieu.chieu2 }}</label>
+          <label *ngFor="let chieu of dulieu1">{{ chieu.chieu3 }}</label>
+          <label *ngFor="let chieu of dulieu1">{{ chieu.chieu4 }}</label>
+          <label *ngFor="let chieu of dulieu1">{{ chieu.chieu5 }}</label>
+          <label *ngFor="let chieu of dulieu1">{{ chieu.chieu6 }}</label>
+          <label *ngFor="let chieu of dulieu1">{{ chieu.chieu7 }}</label>
+          <label *ngFor="let chieu of dulieu1">{{ chieu.chieu8 }}</label>
+          <label *ngFor="let chieu of dulieu1">{{ chieu.chieu9 }}</label>
+          <label *ngFor="let chieu of dulieu1">{{ chieu.chieu10 }}</label>
+        </div>
+        <div class="col-lg-6 col-sm-12 divSmall-1-1">
+          <h4>Dữ liệu mẫu 2:</h4>
+          <label *ngFor="let chieu of duLieu2">{{ chieu.chieu1 }}</label>
+          <label *ngFor="let chieu of duLieu2">{{ chieu.chieu2 }}</label>
+          <label *ngFor="let chieu of duLieu2">{{ chieu.chieu3 }}</label>
+          <label *ngFor="let chieu of duLieu2">{{ chieu.chieu4 }}</label>
+          <label *ngFor="let chieu of duLieu2">{{ chieu.chieu5 }}</label>
+          <label *ngFor="let chieu of duLieu2">{{ chieu.chieu6 }}</label>
+          <label *ngFor="let chieu of duLieu2">{{ chieu.chieu7 }}</label>
+          <label *ngFor="let chieu of duLieu2">{{ chieu.chieu8 }}</label>
+          <label *ngFor="let chieu of duLieu2">{{ chieu.chieu9 }}</label>
+          <label *ngFor="let chieu of duLieu2">{{ chieu.chieu10 }}</label>
+        </div>
+        <div class="col-lg-6 col-sm-12 divSmall-1-2">
+          <input type="text" [(ngModel)]="this.bias" />
+          <button type="submit" class="btnChay" (click)="Sum()">
+            <h6 class="txtbtnChay">Chạy</h6>
+            <i class="fas fa-arrow-circle-right"></i>
+          </button>
+        </div>
+      </div>
+      <div class="col-lg-6 col-sm-12 divSmall-2">
+        <app-icon></app-icon>
+        <!-- <h1>{{ Sigmoid(this.bias) }}</h1> -->
+        <h1>{{ Sum() }}</h1>
+        <h1>khang</h1>
+      </div>
+    </div>
+  </div>
+</div>

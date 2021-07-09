@@ -4,43 +4,43 @@
       <div class="col-lg-6 col-sm-12 divSmall-1">
         <div class="col-lg-6 col-sm-12 divSmall-1-1">
           <h4>Dữ liệu mẫu 1:</h4>
-          <label *ngFor="let chieu of dulieu1">{{ chieu.chieu1 }}</label>
-          <label *ngFor="let chieu of dulieu1">{{ chieu.chieu2 }}</label>
-          <label *ngFor="let chieu of dulieu1">{{ chieu.chieu3 }}</label>
-          <label *ngFor="let chieu of dulieu1">{{ chieu.chieu4 }}</label>
-          <label *ngFor="let chieu of dulieu1">{{ chieu.chieu5 }}</label>
-          <label *ngFor="let chieu of dulieu1">{{ chieu.chieu6 }}</label>
-          <label *ngFor="let chieu of dulieu1">{{ chieu.chieu7 }}</label>
-          <label *ngFor="let chieu of dulieu1">{{ chieu.chieu8 }}</label>
-          <label *ngFor="let chieu of dulieu1">{{ chieu.chieu9 }}</label>
-          <label *ngFor="let chieu of dulieu1">{{ chieu.chieu10 }}</label>
+          <div *ngFor="let item of dulieu1; let i = index">
+            <label>{{ item.chieu1 }}</label>
+            <label>{{ item.chieu2 }}</label>
+            <label>{{ item.chieu3 }}</label>
+            <label>{{ item.chieu4 }}</label>
+          </div>
         </div>
         <div class="col-lg-6 col-sm-12 divSmall-1-1">
-          <h4>Dữ liệu mẫu 2:</h4>
-          <label *ngFor="let chieu of duLieu2">{{ chieu.chieu1 }}</label>
-          <label *ngFor="let chieu of duLieu2">{{ chieu.chieu2 }}</label>
-          <label *ngFor="let chieu of duLieu2">{{ chieu.chieu3 }}</label>
-          <label *ngFor="let chieu of duLieu2">{{ chieu.chieu4 }}</label>
-          <label *ngFor="let chieu of duLieu2">{{ chieu.chieu5 }}</label>
-          <label *ngFor="let chieu of duLieu2">{{ chieu.chieu6 }}</label>
-          <label *ngFor="let chieu of duLieu2">{{ chieu.chieu7 }}</label>
-          <label *ngFor="let chieu of duLieu2">{{ chieu.chieu8 }}</label>
-          <label *ngFor="let chieu of duLieu2">{{ chieu.chieu9 }}</label>
-          <label *ngFor="let chieu of duLieu2">{{ chieu.chieu10 }}</label>
+          <div class="col-lg-3 divSmall-1-1-1">
+            <h4>sum:</h4>
+            <div *ngFor="let item of sum; let i = index">
+              <label>{{ item.sum1 }}</label>
+            </div>
+            <h4>kết quả:</h4>
+            <div *ngFor="let item of kq; let i = index">
+              <label>{{ item.kq1 }}</label>
+            </div>
+          </div>
         </div>
         <div class="col-lg-6 col-sm-12 divSmall-1-2">
-          <input type="text" [(ngModel)]="this.bias" />
-          <button type="submit" class="btnChay" (click)="Sum()">
+          <input type="number" [(ngModel)]="this.bias" />
+          <button type="submit" class="btnChay" (click)="KQ()">
             <h6 class="txtbtnChay">Chạy</h6>
             <i class="fas fa-arrow-circle-right"></i>
           </button>
         </div>
       </div>
-      <div class="col-lg-6 col-sm-12 divSmall-2">
-        <app-icon></app-icon>
-        <!-- <h1>{{ Sigmoid(this.bias) }}</h1> -->
-        <h1>{{ Sum() }}</h1>
-        <h1>khang</h1>
+      <div class="col-lg-6 col-sm-12 divSmall-2 divSmall-1-1">
+        <h4>Kết quả hướng tới:</h4>
+        <div *ngFor="let item of dauRaLyTuong; let i = index">
+          <label>{{ dauRaLyTuong[i] }}</label>
+        </div>
+        <h4>Các weight:</h4>
+        <div *ngFor="let item of weight; let i = index">
+          <label>{{ item.weight1 }}</label>
+        </div>
+        <label>{{ this.bias + 1 }}</label>
       </div>
     </div>
   </div>

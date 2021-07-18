@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, ViewChild } from '@angular/core'
 
 import { ChartDataSets, ChartType, ChartOptions } from 'chart.js'
-import { Label, ThemeService } from 'ng2-charts'
+import { Label, ThemeService, BaseChartDirective } from 'ng2-charts'
 
 @Component({
   selector: 'app-form',
@@ -11,7 +11,7 @@ import { Label, ThemeService } from 'ng2-charts'
 export class FormComponent implements OnInit {
   [x: string]: any
   kq = [{ kq1: 0 }, { kq1: 0 }, { kq1: 0 }]
-  x: number = 200
+  x: number = 1
   bias: number = 0
 
   //===============scatter======================
@@ -47,11 +47,10 @@ export class FormComponent implements OnInit {
 
   public scatterChartType: ChartType = 'scatter'
 
-  erload(): void {
-    this.data
-  }
   //===================end scatter========================
-
+  @ViewChild(BaseChartDirective, { static: true }) chart:
+    | BaseChartDirective
+    | undefined
   constructor() {}
 
   erro = [0, 0, 0]
@@ -148,7 +147,7 @@ export class FormComponent implements OnInit {
       }
       // console.log('================================================')
       // console.log(this.data.datasets[index].x)
-
+      this.chart?.update()
       this.Sum_outputAndadjiusment()
     }
     return this.kq

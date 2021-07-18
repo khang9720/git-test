@@ -1,6 +1,7 @@
 <div class="container-fluid">
   <div class="container">
     <div class="row divBig">
+      <!-- du lieu mau  -->
       <div class="col-lg-6 col-sm-12 divSmall-1">
         <div class="col-lg-6 col-sm-12 divSmall-1-1">
           <h4>Dữ liệu mẫu 1:</h4>
@@ -11,36 +12,41 @@
             <label>{{ item.chieu4 }}</label>
           </div>
         </div>
-        <div class="col-lg-6 col-sm-12 divSmall-1-1">
-          <div class="col-lg-3 divSmall-1-1-1">
-            <h4>sum:</h4>
-            <div *ngFor="let item of sum; let i = index">
-              <label>{{ item.sum1 }}</label>
-            </div>
-            <h4>kết quả:</h4>
-            <div *ngFor="let item of kq; let i = index">
-              <label>{{ item.kq1 }}</label>
-            </div>
-          </div>
-        </div>
+        <!-- end du lieu mau  -->
+        <!-- bias va nut chay -->
         <div class="col-lg-6 col-sm-12 divSmall-1-2">
-          <input type="number" [(ngModel)]="this.bias" />
-          <button type="submit" class="btnChay" (click)="KQ()">
+          <input type="number" [(ngModel)]="this.x" />
+          <label for="">{{ this.x }}</label>
+          <button type="submit" class="btnChay" (click)="this.KQ(this.x)">
             <h6 class="txtbtnChay">Chạy</h6>
             <i class="fas fa-arrow-circle-right"></i>
           </button>
         </div>
       </div>
+      <!-- end bias va nut chay  -->
+
+      <!-- ket qua huong toi, cac weight, sum, ket qua chay  -->
       <div class="col-lg-6 col-sm-12 divSmall-2 divSmall-1-1">
         <h4>Kết quả hướng tới:</h4>
         <div *ngFor="let item of dauRaLyTuong; let i = index">
           <label>{{ dauRaLyTuong[i] }}</label>
         </div>
-        <h4>Các weight:</h4>
-        <div *ngFor="let item of weight; let i = index">
-          <label>{{ item.weight1 }}</label>
+        <h4>kết quả:</h4>
+        <div *ngFor="let item of kq; let i = index">
+          <label>{{ item.kq1 }}</label>
         </div>
-        <label>{{ this.bias + 1 }}</label>
+      </div>
+      <!-- end  ket qua huong toi, cac weight, sum, ket qua chay -->
+      <div class="row divBig">
+        <div style="display: block;">
+          <canvas
+            baseChart
+            [datasets]="scatterChartData"
+            [options]="scatterChartOptions"
+            [labels]="scatterChartLabels"
+            [chartType]="scatterChartType"
+          ></canvas>
+        </div>
       </div>
     </div>
   </div>

@@ -30,7 +30,7 @@ export class ChartComponent implements OnInit {
         { x: 4, y: 4 },
         { x: 5, y: -3 },
       ],
-      label: 'Series A',
+      label: 'ban a ',
       pointRadius: 10,
     },
   ]
